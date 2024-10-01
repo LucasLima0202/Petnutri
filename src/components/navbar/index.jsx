@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Header = styled.header`
-  background: #FFF;
-  opacity: 0.8;
+  background: #90229e71;
+  opacity: 1;
   position: fixed;
   z-index: 3;
   width: 100%;
@@ -12,7 +12,7 @@ const Header = styled.header`
   left: 0;
   top: 0;
   justify-content: space-evenly;
-
+ 
   @media (max-width: 768px) {
     display:block
   }
@@ -37,6 +37,7 @@ const Logo = styled.a`
   color: #000;
   line-height: 55px;
   padding: 10px 0;
+  color: #ffffff;
 `;
 
 const Nav = styled.nav`
@@ -45,17 +46,19 @@ const Nav = styled.nav`
     display: ${({ open }) => (open ? 'block' : 'none')};
     padding: 0;
     margin: 0;
+    
     width: 100%;  /* Full width for mobile */
   }
 
   ul li {
     margin: 10px 0;
+    
   }
 
   ul li a {
     text-decoration: none;
-    color: #000;
     padding: 0.7em 1em;
+    color: #ffffff;
     display: block;
     width: 100%;
   }
