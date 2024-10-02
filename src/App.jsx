@@ -2,10 +2,11 @@ import styled, { css } from 'styled-components';
 import GlobalStyle from './components/GlobalStyle';
 import Navbar from './components/navbar';
 import Button from './components/button';
-
+import Banner from './components/banner';
+import BannerImg from './assets/BG.svg'
 // Estilo de fundo
 const BackgroundGradient = styled.div`
-  background-color: #ffffff;
+  background-color: #d39e9e;
   width: 100%;
   min-height: 100vh;
 `;
@@ -22,12 +23,12 @@ const GradientFillBlue = css`
 `;
 
 const GradientOutBlue = css`
-  background-image: linear-gradient(to right, #FFFFFF, #6A68AF, #FFFFFF, #6A68AF);
+  background-image: linear-gradient(to right, #FFFFFF, #6A68AF, #FFFFFF);
   box-shadow: 0 4px 15px 0 #FFFFFF;
 `;
 
 const GradientOutPurple = css`
-  background-image: linear-gradient(to right, #FFFFFF, #CD9BFF, #FFFFFF, #CD9BFF);
+  background-image: linear-gradient(to right, #FFFFFF, #CD9BFF, #FFFFFF);
   box-shadow: 0 4px 15px 0 #FFFFFF;
 `;
 
@@ -36,28 +37,10 @@ function App() {
     <BackgroundGradient>
       <GlobalStyle />
       <>
-        <Navbar />
-        <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-        <Button 
-          title="Button 1"
-          gradient={GradientFillPurple}
+        <Banner
+        backgroundImage={BannerImg}
         />
-        <Button 
-          title="Button 2"
-          gradient={GradientFillBlue}
-        />
-        <Button 
-          title="Button 3"
-          gradient={GradientOutBlue}
-        />
-        <Button 
-          title="Button 4"
-          gradient={GradientOutPurple}
-        />
+       
       </>
     </BackgroundGradient>
   );

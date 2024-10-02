@@ -6,9 +6,8 @@ const StyledButton = styled.button`
   width: 200px;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: ${(props) => props.color || '#fff'};
   cursor: pointer;
-  margin: 20px;
   height: 55px;
   text-align: center;
   border: none;
@@ -25,12 +24,14 @@ const StyledButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  
 `;
 
-const Button = ({ title, gradient, onPress }) => {
+const Button = ({ title, gradient, onPress, color,children  }) => {
   return (
-    <StyledButton gradient={gradient} onClick={onPress}>
-      {title}
+    <StyledButton gradient={gradient} onClick={onPress} color={color}>
+      {title}{children}
     </StyledButton>
   );
 };

@@ -5,12 +5,12 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;1,9..40,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 html {
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+
 }
 body {
   margin: 0;
@@ -79,66 +79,7 @@ button,
 input { 
   overflow: visible;
 }
-button,
-select { 
-  text-transform: none;
-}
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-legend {
-  box-sizing: border-box; 
-  color: inherit; 
-  display: table; 
-  max-width: 100%; 
-  padding: 0; 
-  white-space: normal; 
-}
-progress {
-  vertical-align: baseline;
-}
-textarea {
-  overflow: auto;
-}
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; 
-  padding: 0; 
-}
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-[type="search"] {
-  -webkit-appearance: textfield; 
-  outline-offset: -2px; 
-}
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button; 
-  font: inherit; 
-}
+
 details {
   display: block;
 }
