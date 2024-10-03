@@ -1,4 +1,4 @@
-import BannerSvg from '/public/Ban.svg';
+import BannerSvg from '/public/assets/Ban.svg';
 import styled, { css } from 'styled-components';
 import Button from "../button"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,15 +27,36 @@ align-items:center;
 gap: 1rem;
 max-width: 90%;
 padding-bottom:7%;
+flex-direction:row;
+
+@media (max-width: 768px) {
+    flex-direction:column;
+  }
 `
 
 const ContainerInfo = styled.article`
+display:flex;
+flex-flow: column;
 
+@media (max-width: 768px) {
+  align-items:center;
+  justify-content:center;
+}
 `
 const Title = styled.h2`
 font-size: 3.4rem;
 font-weight: 600;
 color: #ffffff;
+
+@media (max-width: 985px) {
+    font-size:2.6rem;
+    
+  }
+@media (max-width: 768px) {
+    text-align:center;
+    font-size:7vw;
+    margin:0;
+  }
 
 `
 const SubTitle = styled.p`
@@ -44,21 +65,63 @@ width:95%;
 font-weight: 000;
 color: #ffffffc7;
 margin-bottom:5%;
+@media (max-width: 985px) {
+    font-size:1.2rem;
+    
+  }
+  @media (max-width: 768px) {
+    text-align:center;
+    font-size:3vw;
+    margin-top:4%;
+    width:80%;
+}
+
 `
 const SectionButton = styled.div`
 display:flex;
 flex-flow: row;
 align-items:flex-start;
 gap:1rem;
-`
 
+@media (max-width: 768px) {
+    text-align:center;
+    font-size:3vw;
+    margin-top:4%;
+}
+
+@media (max-width: 450px) {
+   flex-direction:column;
+   margin-top:5%;
+  }
+`
 
 const ContainerSvg = styled.div`
-display:flex;
-justify-content: center;
-padding-top:10%;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  align-items: center;
+
+  svg {
+    width: 35vw; /* Definindo um tamanho padrão para o SVG */
+    height: auto; /* Mantendo a proporção da altura */
+  }
+
+  @media (max-width: 768px) {
+    svg {
+        padding-left:13%;
+        margin:0;
+        width: 55vw;
+    }
+}
+  @media (max-width: 468px) {
+    svg {
+      padding-left:13%;
+      margin:0;
+      width: 75vw;
+    }
+  }
 `
+
 const Outline = css`
 background-color: transparent;
 border: solid 1.9px #ffffff;
@@ -71,6 +134,11 @@ font-weight: 600;
 &:hover {
     background-color: #ffffff;
     color: #000000;
+  }
+
+  @media (max-width: 450px) {
+    font-size:15px;
+    width:200px;
   }
 `
 
@@ -85,6 +153,11 @@ color: #000000;
 transition: all ease-in-out 0.2s;
 &:hover {
     transform: scale(1.03)
+  }
+
+  @media (max-width: 450px) {
+    font-size:15px;
+    width:200px;
   }
 `
 

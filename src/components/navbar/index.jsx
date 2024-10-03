@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Header = styled.header`
-  background: #90229e71;
+  background: #642b935c;
   opacity: 1;
   position: fixed;
   z-index: 3;
@@ -11,6 +11,7 @@ const Header = styled.header`
   align-items:center;
   left: 0;
   top: 0;
+  height:9vh;
   justify-content: space-evenly;
  
   @media (max-width: 768px) {
@@ -28,6 +29,8 @@ const Container = styled.div`
   @media (max-width: 768px) {
     flex-direction: row;
     align-items: center;
+    height:9vh;
+
   }
 `;
 
