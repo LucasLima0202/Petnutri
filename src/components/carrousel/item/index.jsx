@@ -5,15 +5,9 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 const ContainerBig = styled.section`
-  background-color: #ffffff;
-  width: 455px;
-  display: flex;
-  margin:0.6%;
-  flex-direction: column;
-  border-radius:6px;
-  align-items: center;
-  height: 289.48px;
-  position: relative; /* Permite posicionamento absoluto dentro */
+/* Permite posicionamento absoluto dentro */
+display:flex;
+justify-content:center;
 `;
 
 const ColorHeading = styled.div`
@@ -25,7 +19,7 @@ const ColorHeading = styled.div`
 `;
 
 const BoxIcon = styled.div`
-  ${props => props.grandienticon};
+  ${props => props.gradienticon};
   height: 66.98px;
   width: 66.98px;
   position: absolute;
@@ -33,11 +27,11 @@ const BoxIcon = styled.div`
   left: 13%; /* Alinha um pouco à esquerda */
   transform: translate(-50%, -50%); /* Centraliza o ícone em relação ao ponto de referência */
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  text-align:center;
   border-radius: 6px; /* Se precisar que o ícone seja circular */
   svg{
+    padding-top:25%;
     font-size:30px;
   }
 `;
@@ -46,6 +40,7 @@ const ContainerInfo = styled.div`
   height: 127px;
   width: 392px;
   margin-top:8%;
+  padding-left:5%;
   display: flex;
   flex-flow:column nowrap;
   align-items: flex-start;
@@ -58,8 +53,24 @@ font-weight:600;
 `
 const Label = styled.p`
 font-size:1rem;
-
 `
+
+const ContainerWidth = styled.div`
+  background-color: #ffffff;
+  align-items:center;
+  padding:0;
+  margin:0;
+  width:100%;
+  display: block;
+
+  flex-direction: column;
+  border-radius:6px;
+  align-items: center;
+  height: 289.48px;
+  width:70%;
+  position: relative; 
+`
+
 const AnchorButton = styled.a`
   /* color:${props => props.anchorcolor};
   text-decoration:none;
@@ -112,11 +123,12 @@ const AnchorButton = styled.a`
 
 `
 
-const Item = ({ icon,gradient,grandienticon,title,label,anchor,anchorcolor}) => {
+const Item = ({ id,icon,gradient,gradienticon,title,label,anchor,anchorcolor}) => {
   return (
-    <ContainerBig>
+    <ContainerBig key={id}>
+      <ContainerWidth>
       <ColorHeading gradient={gradient}/>
-      <BoxIcon grandienticon={grandienticon}>
+      <BoxIcon gradienticon={gradienticon}>
         <FontAwesomeIcon icon={icon} fontSize={25}/>
       </BoxIcon>
       <ContainerInfo>
@@ -127,6 +139,7 @@ const Item = ({ icon,gradient,grandienticon,title,label,anchor,anchorcolor}) => 
         <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '8px' }} />
         </AnchorButton>
       </ContainerInfo>
+      </ContainerWidth>
     </ContainerBig>
   );
 };

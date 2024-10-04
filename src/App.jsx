@@ -4,6 +4,8 @@ import Navbar from './components/navbar';
 import Button from './components/button';
 import Banner from './components/banner';
 import Item from './components/carrousel/item';
+import Ccarrousel from './components/carrousel';
+import Slider from './components/slider';
 
 // Estilo de fundo
 const BackgroundGradient = styled.div`
@@ -42,48 +44,7 @@ justify-content:center;
 align-items:center;
 background-color: #b8b8b8;
 `
-import { faChartColumn } from '@fortawesome/free-solid-svg-icons';
-import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 
-
-const GradientHeadingPurple = css`
-  background-image: linear-gradient(78deg, #7508CC, #4D22A9);
-
-`;
-
-const GradientFillIconp = css`
-  background-color: #7508CC;
-  color:#ffffff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`
-
-const BlankFillIconp = css`
-  background-color: #FFFFFF;
-  color:#7508CC;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`
-
-const GradientHeadingBlue = css`
-  background-image: linear-gradient(78deg, #4F4BB0, #21204A);
-
-`;
-
-const GradientFillIconb = css`
-  background-color: #4F4BB0;
-  color:#ffffff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`
-
-const BlankFillIconb = css`
-  background-color: #FFFFFF;
-  color:#4F4BB0;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`
-
-const GradientHeadingDark = css`
-  background-image: linear-gradient(78deg, #001230, #2E1B7A);
-
-`;
 
 function App() {
   return (
@@ -95,35 +56,8 @@ function App() {
         backgroundImage={BannerImg}
         />
         <Services>
-          <Item 
-          icon={faChartColumn} 
-          gradient={GradientHeadingPurple} 
-          grandienticon={GradientFillIconp} 
-          title="Strategic Planning"
-          label="In depth research about the company tragectory and goals"
-          anchor="#id"
-          anchorcolor="#7508CC"
-          />
-          <Item 
-          icon={faChartColumn} 
-          gradient={GradientHeadingPurple} 
-          grandienticon={BlankFillIconp} 
-          title="Content Production"
-          label="Execution of communication strategies with a content calendar and team coordination"
-          anchor="#id"
-          anchorcolor="#7508CC"
-          />
-
-          <Item 
-          icon={faCalendar} 
-          gradient={GradientHeadingBlue} 
-          grandienticon={GradientFillIconb} 
-          title="Communication Team Leadership"
-          label="Guiding your team from content creation to final execution"
-          anchor="#id"
-          anchorcolor="#4F4BB0"
-          />
-         
+          {/* <Ccarrousel/> */}
+          <Slider/>
         </Services>
       </>
     </BackgroundGradient>
