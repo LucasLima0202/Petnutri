@@ -7,7 +7,9 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const ContainerBig = styled.section`
 /* Permite posicionamento absoluto dentro */
 display:flex;
+align-items:center;
 justify-content:center;
+height:60vh;
 `;
 
 const ColorHeading = styled.div`
@@ -59,15 +61,15 @@ const ContainerWidth = styled.div`
   background-color: #ffffff;
   align-items:center;
   padding:0;
-  margin:0;
+  margin:10px;
   width:100%;
   display: block;
-
-  flex-direction: column;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;  flex-direction: column;
   border-radius:6px;
   align-items: center;
   height: 289.48px;
-  width:70%;
+  width:80%;
+  gap:0;
   position: relative; 
 `
 

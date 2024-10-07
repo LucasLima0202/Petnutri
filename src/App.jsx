@@ -1,11 +1,10 @@
 import styled, { css } from 'styled-components';
 import GlobalStyle from './components/GlobalStyle';
 import Navbar from './components/navbar';
-import Button from './components/button';
+// import Button from './components/button';
 import Banner from './components/banner';
-import Item from './components/carrousel/item';
-import Ccarrousel from './components/carrousel';
 import Slider from './components/slider';
+import OptimalInfo from './components/optimalinfo';
 
 // Estilo de fundo
 const BackgroundGradient = styled.div`
@@ -39,10 +38,15 @@ const BannerImg = '/public/assets/BG.svg';
 
 const Services = styled.div`
 display:flex;
-height: 80vh;
+height: 60vh;
 justify-content:center;
 align-items:center;
-background-color: #b8b8b8;
+`
+const SubHedServices = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 `
 
 
@@ -55,8 +59,13 @@ function App() {
         <Banner
         backgroundImage={BannerImg}
         />
+        <SubHedServices>
+          <OptimalInfo 
+          title="Our Services"
+          subinfo="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis et justo a pellentesque. Aliquam sagittis mollis libero eu molestie. Cras pellentesque condimentum placerat. "
+          />
+        </SubHedServices>
         <Services>
-          {/* <Ccarrousel/> */}
           <Slider/>
         </Services>
       </>
