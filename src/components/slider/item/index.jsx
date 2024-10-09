@@ -125,22 +125,33 @@ const AnchorButton = styled.a`
 
 `
 
-const Item = ({ id,icon,gradient,gradienticon,title,label,anchor,anchorcolor}) => {
+const Item = ({ id, icon, gradient, gradienticon, title, label, anchor, anchorcolor }) => {
+  const handleScroll = (e) => {
+    e.preventDefault(); // Impede o comportamento padrão do link
+    const targetElement = document.querySelector(anchor); // Seleciona o elemento de destino
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth', // Efeito de rolagem suave
+      });
+    }
+  };
+
   return (
     <ContainerBig key={id}>
       <ContainerWidth>
-      <ColorHeading gradient={gradient}/>
-      <BoxIcon gradienticon={gradienticon}>
-        <FontAwesomeIcon icon={icon} fontSize={25}/>
-      </BoxIcon>
-      <ContainerInfo>
-        <Title>{title}</Title>
-        <Label>{label}</Label>
-        <AnchorButton href={anchor} anchorcolor={anchorcolor}>
+        <ColorHeading gradient={gradient} />
+        <BoxIcon gradienticon={gradienticon}>
+          <FontAwesomeIcon icon={icon} fontSize={25} />
+        </BoxIcon>
+        <ContainerInfo>
+          <Title>{title}</Title>
+          <Label>{label}</Label>
+          <AnchorButton href={anchor} anchorcolor={anchorcolor} onClick={handleScroll} >
             See Details
-        <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '8px' }} />
-        </AnchorButton>
-      </ContainerInfo>
+            <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '8px' }} />
+          </AnchorButton>
+        </ContainerInfo>
       </ContainerWidth>
     </ContainerBig>
   );

@@ -10,6 +10,7 @@ html {
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 
 }
 body {

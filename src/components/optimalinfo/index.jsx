@@ -9,16 +9,21 @@ width:70%;
 color:#68718B;
 text-align:center;
 `
-
+const ContainerInfo = styled.div`
+margin-bottom:3%;
+display:flex;
+flex-direction:column;
+align-items:center;
+`
 
 const OptimalInfo = ({title,subinfo}) => {
     return(
-        <>
+        <ContainerInfo>
             <Title>{title}</Title>
             <SubInfo>
                 {subinfo}
             </SubInfo>
-        </>
+        </ContainerInfo>
     )
 }
 

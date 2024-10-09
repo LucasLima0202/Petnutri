@@ -56,9 +56,9 @@ const data = [
       icon: faChartColumn, 
       gradient: GradientHeadingPurple, 
       gradienticon: GradientFillIconp, 
-      title: "Strategic Planning",
+      title: "Mentorship Programs",
       label: "In depth research about the company trajectory and goals",
-      anchor: "#id",
+      anchor: "#mentorship",
       anchorcolor: "#7508CC"
     },
     {
@@ -68,7 +68,7 @@ const data = [
       gradienticon: BlankFillIconp, 
       title: "Content Production",
       label: "Execution of communication strategies with a content calendar and team coordination",
-      anchor: "#id",
+      anchor: "#content",
       anchorcolor: "#7508CC"
     },
     {
@@ -131,6 +131,7 @@ const data = [
 
   const SliderContainer = styled.div`
   width: 95%; // Define a largura que você deseja
+
   max-width: 1200px; // Largura máxima para garantir que ele não seja muito grande em telas grandes
   margin: 0 auto; // Centraliza o slider na tela
 `;
@@ -153,7 +154,7 @@ const Controlerbutton = styled.button`
   color: #5a23c0;
   font-size: 20px;
   transition: transform 0.3s ease;
-
+  margin-bottom:5%;
   &:hover {
     transform: scale(1.2);  // Um pequeno efeito ao passar o mouse sobre o botão
   }
