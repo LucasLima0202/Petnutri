@@ -36,6 +36,16 @@ const BoxIcon = styled.div`
     padding-top:25%;
     font-size:30px;
   }
+
+  @media (max-width: 768px) {
+    height: 56.98px;
+    width: 56.98px;
+    left: 17%;
+    svg{
+      font-size:25px;
+    }
+
+  }
 `;
 
 const ContainerInfo = styled.div`
@@ -52,9 +62,21 @@ const Title = styled.h1`
 margin:0;
 font-size:1.5rem;
 font-weight:600;
+
+@media (max-width: 468px) {
+  font-size:1.3rem;
+  text-align:left;
+  width:80%;
+}
+
 `
 const Label = styled.p`
 font-size:1rem;
+@media (max-width: 468px) {
+  font-size:0.9rem;
+  width:60%;
+  text-align:left;
+}
 `
 
 const ContainerWidth = styled.div`
@@ -121,8 +143,46 @@ const AnchorButton = styled.a`
         transform: translateX(0);
     
 
+  
 }
 
+@media (max-width: 468px) {
+  font-size:0.9rem;
+  text-align:left;
+  width:80%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+&:before, &:after {
+    position: absolute;
+    content: '';
+    border-bottom: 3px solid ${props => props.anchorcolor};;
+    border-radius: 1em;
+    bottom: .3em;
+    transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+&:before {
+    width: 1em;
+    transform-origin: left;
+}
+
+&:after {
+    width: 22%;
+    left: 1em;
+    transform: translateX(20%);
+}
+
+&:hover:before {
+    transform: scaleX(0.3);
+}
+
+&:hover:after {
+    transform: translateX(0);
+
+
+
+}
+}
 `
 
 const Item = ({ id, icon, gradient, gradienticon, title, label, anchor, anchorcolor }) => {

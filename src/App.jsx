@@ -142,7 +142,7 @@ function App() {
             title="Content Production"
             titlecolor="#FFFFFF"
             id="content"
-            infop="Execution of communication strategies..."
+            infop="Execution of communication strategies with a detailed content calendar for social media, website, and offline media, along with team coordination throughout the content creation process."
             infopcolor="#E7E7E7"
             list={data1}
             gradienticon={BlankFillIconp}

@@ -144,6 +144,10 @@ const SwiperContainerButton = styled.div`
   top: 0;
   height: 100%;  // Faz com que os botões fiquem centralizados verticalmente em relação ao slider
   z-index: 10;  // Garante que os botões fiquem acima do slider
+  @media (max-width: 468px) {
+ top:-13rem;
+ justify-content:space-between;
+}
 `;
 
 const Controlerbutton = styled.button`

@@ -32,6 +32,11 @@ const SectionBackground = styled.div`
   height: 100vh;
   align-items: center;
   justify-content: center;
+  @media (max-width: 468px) {
+    flex-direction:column-reverse;
+    align-items:center;
+    height:130vh;
+  }
 `;
 
 const ContainerSvg = styled.div`
@@ -44,6 +49,12 @@ const ContainerSvg = styled.div`
     width:35vw;
     }
 
+    @media (max-width: 468px) {
+      img{
+    width:45vw;
+    padding-top:8%;
+    }
+    }
 `;
 
 const ContainerInfo = styled.div`
@@ -54,6 +65,11 @@ const ContainerInfo = styled.div`
   align-items:flex-start;
   padding-left: 0%; 
   margin:0;
+  @media (max-width: 468px) {
+    align-items:center;
+    margin:0;
+    padding:0;
+  }
 `;
 
 const SectionList = styled.div`
@@ -67,6 +83,11 @@ const List = styled.ul`
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  @media (max-width: 468px) {
+    padding:0;
+    align-items:center;
+    margin:0;
+  }
 `;
 const ListItem = styled.li`
   margin-bottom: 8px; /* Espaçamento entre os itens */
@@ -79,6 +100,19 @@ const ListItem = styled.li`
     content: url(${props => props.listicon}); /* Adiciona o ícone antes do texto */
     display: inline-block;
     margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+
+  }
+  @media (max-width: 468px) {
+    font-size: 0.9rem;
+    width:80%;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    &::before {
+    font-size:12px;
+    }
+  
+
   }
 `;
 
@@ -92,8 +126,15 @@ const BoxIcon = styled.div`
   border-radius: 6px;
   z-index: 2;
   margin-bottom: 3%;
-  svg4{
+  svg{
     font-size: 30px;
+  }
+
+  @media (max-width: 468px) {
+    margin-top:5%;
+    svg{
+      font-size:25px;
+    }
   }
 `;
 
@@ -103,6 +144,10 @@ const Title = styled.h1`
   font-weight: 600;
   margin-bottom:2%;
   color: ${props => props.titlecolor || '#000'};
+  @media (max-width: 468px) {
+    font-size: 1.8rem;
+
+  }
 `;
 
 const Infop = styled.p`
@@ -111,6 +156,10 @@ const Infop = styled.p`
   width: 90%;  
   text-align:left;
   color:${props => props.infopcolor || '#000'};
+  @media (max-width: 468px) {
+  font-size: 0.9rem;
+  text-align:center;
+}
 `;
 
 // Componente que recebe title, infop, e list como props
