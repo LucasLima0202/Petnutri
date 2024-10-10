@@ -31,10 +31,12 @@ const BoxIcon = styled.div`
   z-index: 2;
   display: block;
   text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   border-radius: 6px; /* Se precisar que o ícone seja circular */
   svg{
-    padding-top:25%;
-    font-size:30px;
+    font-size:32px;
   }
 
   @media (max-width: 768px) {
@@ -103,7 +105,7 @@ const AnchorButton = styled.a`
   transform: scale(1.01);
   font-weight:600;  
   } */
-  
+    background-color: aliceblue;
     color:${props => props.anchorcolor};
     font-size: 1rem;
     text-decoration: none;
@@ -208,7 +210,7 @@ const Item = ({ id, icon, gradient, gradienticon, title, label, anchor, anchorco
           <Title>{title}</Title>
           <Label>{label}</Label>
           <AnchorButton href={anchor} anchorcolor={anchorcolor} onClick={handleScroll} >
-            See Details
+              See Details
             <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '8px' }} />
           </AnchorButton>
         </ContainerInfo>

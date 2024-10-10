@@ -11,6 +11,9 @@ import  { useRef } from 'react';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -27,6 +30,12 @@ const GradientFillIconp = css`
 const BlankFillIconp = css`
   background-color: #FFFFFF;
   color: #7508CC;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+`;
+
+const BlankFillIcondark = css`
+  background-color: #FFFFFF;
+  color: #001230;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
@@ -53,47 +62,37 @@ const GradientHeadingDark = css`
 const data = [
     {
       id: 1,
-      icon: faChartColumn, 
+      icon: faClipboardList, 
       gradient: GradientHeadingPurple, 
       gradienticon: GradientFillIconp, 
-      title: "Mentorship Programs",
-      label: "In depth research about the company trajectory and goals",
-      anchor: "#mentorship",
-      anchorcolor: "#7508CC"
-    },
-    {
-      id: 2,  
-      icon: faChartColumn, 
-      gradient: GradientHeadingPurple, 
-      gradienticon: BlankFillIconp, 
-      title: "Content Production",
+      title: "Content Production ",
       label: "Execution of communication strategies with a content calendar and team coordination",
       anchor: "#content",
       anchorcolor: "#7508CC"
     },
     {
-      id: 3,  
+      id: 2,  
       icon: faCalendar, 
+      gradient: GradientHeadingPurple, 
+      gradienticon: BlankFillIconp, 
+      title: "Mentorship Programs",
+      label: "In depth research about the company trajectory and goals ",
+      anchor: "#mentorship",
+      anchorcolor: "#7508CC"
+    },
+    {
+      id: 3,  
+      icon: faChartColumn, 
       gradient: GradientHeadingBlue, 
       gradienticon: GradientFillIconb, 
-      title: "Communication Team Leadership",
-      label: "Guiding your team from content creation to final execution",
+      title: "Strategic Planning",
+      label: "Building tailored strategies for sustainable growth and success",
       anchor: "#id",
       anchorcolor: "#4F4BB0"
     },
     {
       id: 4,
-      icon: faChartColumn, 
-      gradient: GradientHeadingPurple, 
-      gradienticon: BlankFillIconp, 
-      title: "Content Production",
-      label: "Execution of communication strategies with a content calendar and team coordination",
-      anchor: "#id",
-      anchorcolor: "#7508CC"
-    },
-    {
-      id: 5,
-      icon: faCalendar, 
+      icon: faUserGroup, 
       gradient: GradientHeadingBlue, 
       gradienticon: BlankFillIconb, 
       title: "Communication Team Leadership",
@@ -102,14 +101,14 @@ const data = [
       anchorcolor: "#4F4BB0"
     },
     {
-      id: 6,
-      icon: faCalendar, 
-      gradient: GradientHeadingBlue, 
-      gradienticon: GradientFillIconb, 
+      id: 5,
+      icon: faChartLine, 
+      gradient: GradientHeadingDark, 
+      gradienticon: BlankFillIcondark, 
       title: "Communication Team Leadership",
       label: "Guiding your team from content creation to final execution",
       anchor: "#id",
-      anchorcolor: "#4F4BB0"
+      anchorcolor: "#001230"
     }
   ];
 
@@ -141,7 +140,8 @@ const SwiperContainerButton = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  top: 0;
+  justify-content:space-between;
+  top: -12rem;
   height: 100%;  // Faz com que os botões fiquem centralizados verticalmente em relação ao slider
   z-index: 10;  // Garante que os botões fiquem acima do slider
   @media (max-width: 468px) {

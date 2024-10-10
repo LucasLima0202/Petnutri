@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons';
 import { width } from '@fortawesome/free-regular-svg-icons/faAddressBook';
 
+
 // Button Gradients
 const GradientFillPurpleBTN = css`
   background-image: linear-gradient(to right, #7309CA, #5020AB, #7309CA, #641FE7);
@@ -176,7 +177,8 @@ const SecInfoR = ({
   listicon,
   btngradient,
   btncolor,
-  id
+  id,
+  btnlabel
 }) => {
   return (  
     <>
@@ -204,7 +206,7 @@ const SecInfoR = ({
           </SectionList>
 
           <Button 
-            title="Solutions Start Now"
+            title={btnlabel}
             gradient={btngradient}
             color={btncolor}
           />

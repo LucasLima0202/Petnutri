@@ -10,6 +10,10 @@ import SecInfoL from './components/SecInfoL';
 import React, { useRef } from 'react';
 //icon
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons';
+import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 
 
 // Estilo de fundo
@@ -80,6 +84,11 @@ const GradientHeadingDark = css`
 const GradientPurpleBackground = css`
   background-image: linear-gradient(78deg, #7309CA, #5020AB);
 `;
+
+const GradientBlueBackground = css`
+  background-image: linear-gradient(78deg, #4F4BB0, #28265A);
+`;
+
 const WhiteBackground = css`
   background-image: #FFFFFF;
 `;
@@ -110,6 +119,11 @@ const data1 = [
 const data2 = [
   "Strategy reviews, content guidance, and communication planning.",
   "Streamlining content creation through effective teamwork",
+  "Ensuring cohesive messaging across all media"
+];
+const data3 = [
+  "Group Management",
+  "Broadcasting Operations",
   "Ensuring cohesive messaging across all media"
 ];
 
@@ -147,11 +161,12 @@ function App() {
             list={data1}
             gradienticon={BlankFillIconp}
             listicon="assets/listiconpurple.svg"
-            icon={faChartColumn}
+            icon={faClipboardList}
             backgroundgradient={GradientPurpleBackground}
             svgPath="/public/assets/content1.svg"
             btngradient={GradientOutPurpleBTN}
             btncolor="#7508CC"
+            btnlabel="Take a look"
           />
         </div>
         <div ref={mentorshipRef}>
@@ -163,12 +178,65 @@ function App() {
             infopcolor="#555555"
             list={data2}
             gradienticon={GradientFillIconp}
-            icon={faChartColumn}
+            icon={faCalendar}
             listicon="assets/listiconpurplewhite.svg"
             backgroundgradient={WhiteBackground}
             svgPath="/public/assets/content2.svg"
             btngradient={GradientFillPurpleBTN}
             btncolor="#ffffff"
+            btnlabel="See details"
+          />
+        </div>
+        <div ref={contentRef}>
+          <SecInfoR
+            title="Whatsapp Management"
+            titlecolor="#FFFFFF"
+            id="content"
+            infop="Optimize your outreach with strategic communication solutions."
+            infopcolor="#E7E7E7"
+            list={data3}
+            gradienticon={BlankFillIconb}
+            listicon="assets/listiconblue.svg"
+            icon={faChartColumn}
+            backgroundgradient={GradientBlueBackground}
+            svgPath="/public/assets/content3.svg"
+            btngradient={GradientOutBlueBTN}
+            btncolor="#28265A"
+            btnlabel="Take a look"
+          />
+        </div>
+        <div ref={mentorshipRef}>
+          <SecInfoL
+            title="Mentorship Programs"
+            id="mentorship"
+            titlecolor="#2C0E56"
+            infop="Enhance your skills with our tailored mentorship sessions"
+            infopcolor="#555555"
+            list={data2}
+            gradienticon={GradientFillIconp}
+            icon={faCalendar}
+            listicon="assets/listiconpurplewhite.svg"
+            backgroundgradient={WhiteBackground}
+            svgPath="/public/assets/content2.svg"
+            btngradient={GradientFillPurpleBTN}
+            btncolor="#ffffff"
+          />
+        </div>
+        <div ref={contentRef}>
+          <SecInfoR
+            title="Content Production"
+            titlecolor="#FFFFFF"
+            id="content"
+            infop="Execution of communication strategies with a detailed content calendar for social media, website, and offline media, along with team coordination throughout the content creation process."
+            infopcolor="#E7E7E7"
+            list={data1}
+            gradienticon={BlankFillIconp}
+            listicon="assets/listiconpurple.svg"
+            icon={faClipboardList}
+            backgroundgradient={GradientPurpleBackground}
+            svgPath="/public/assets/content1.svg"
+            btngradient={GradientOutPurpleBTN}
+            btncolor="#7508CC"
           />
         </div>
       </>

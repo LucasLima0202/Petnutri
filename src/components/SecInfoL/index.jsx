@@ -179,7 +179,8 @@ const SecInfoL = ({
   svgPath,
   listicon,
   btngradient,
-  btncolor 
+  btncolor,
+  btnlabel
   }) => {
   return (  
     <>
@@ -207,7 +208,7 @@ const SecInfoL = ({
           </SectionList>
 
           <Button 
-            title="Solutions Start Now"
+            title={btnlabel}
             gradient={btngradient}
             color={btncolor}
           />
