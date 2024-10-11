@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Header = styled.header`
-  background: #642b935c;
+  background: #642b938b;
   opacity: 1;
   position: fixed;
   z-index: 3;
@@ -17,6 +17,7 @@ const Header = styled.header`
   @media (max-width: 768px) {
     display:block
   }
+
 `;
 
 const Container = styled.div`
@@ -49,13 +50,14 @@ const Nav = styled.nav`
     display: ${({ open }) => (open ? 'block' : 'none')};
     padding: 0;
     margin: 0;
-    
+
     width: 100%;  /* Full width for mobile */
   }
 
   ul li {
-    margin: 10px 0;
-    
+    padding: 10px 0;
+
+
   }
 
   ul li a {
@@ -65,15 +67,20 @@ const Nav = styled.nav`
     display: block;
     width: 100%;
   }
+  @media (max-width: 468px) {
+    background-color: #642b938b;
 
+}
   @media (min-width: 768px) {
     ul {
       display: flex;
       justify-content: flex-end;
+
     }
 
     ul li {
       margin: 0;
+
     }
   }
 `;
@@ -83,12 +90,14 @@ const NavToggle = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  color: #000;
+  color: #f7f7f7;
   display: block;
 
   @media (min-width: 768px) {
     display: none;
+
   }
+  
 `;
 
 const Navbar = () => {

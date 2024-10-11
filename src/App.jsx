@@ -14,6 +14,10 @@ import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import Wave from './components/SecStatistic/Wave';
+import SecStatistic from './components/SecStatistic';
+import SecCTA from './components/SecCTA';
+import SecTech from './components/SecTech';
 
 
 // Estilo de fundo
@@ -111,6 +115,13 @@ justify-content:center;
 align-items:center;
 `
 
+const SectionStatistic = styled.div`
+`
+
+const SectionCta = styled.div`
+`
+
+
 const data1 = [
   "Syncing content across platforms for consistency",
   "Streamlining content creation through effective teamwork",
@@ -125,6 +136,11 @@ const data3 = [
   "Group Management",
   "Broadcasting Operations",
   "Ensuring cohesive messaging across all media"
+];
+const data4 = [
+  "Align social media with your brand's goals",
+  "Engage the right people effectively",
+  "Create posts that drive real results"
 ];
 
 function App() {
@@ -191,7 +207,7 @@ function App() {
           <SecInfoR
             title="Whatsapp Management"
             titlecolor="#FFFFFF"
-            id="content"
+            id="management"
             infop="Optimize your outreach with strategic communication solutions."
             infopcolor="#E7E7E7"
             list={data3}
@@ -207,38 +223,31 @@ function App() {
         </div>
         <div ref={mentorshipRef}>
           <SecInfoL
-            title="Mentorship Programs"
-            id="mentorship"
-            titlecolor="#2C0E56"
-            infop="Enhance your skills with our tailored mentorship sessions"
+            title="Strategic Planning"
+            id="strategic"
+            titlecolor="#28265B"
+            infop="Our social media planning service boosts your online presence with custom strategies, targeted audience engagement, and effective content management to achieve real results."
             infopcolor="#555555"
-            list={data2}
-            gradienticon={GradientFillIconp}
-            icon={faCalendar}
-            listicon="assets/listiconpurplewhite.svg"
+            list={data4}
+            gradienticon={GradientFillIconb}
+            icon={faUserGroup}
+            listicon="assets/listiconbluewhite.svg"
             backgroundgradient={WhiteBackground}
-            svgPath="/public/assets/content2.svg"
-            btngradient={GradientFillPurpleBTN}
+            svgPath="/public/assets/content4.svg"
+            btngradient={GradientFillBlueBTN}
             btncolor="#ffffff"
+            btnlabel="See details"
           />
         </div>
-        <div ref={contentRef}>
-          <SecInfoR
-            title="Content Production"
-            titlecolor="#FFFFFF"
-            id="content"
-            infop="Execution of communication strategies with a detailed content calendar for social media, website, and offline media, along with team coordination throughout the content creation process."
-            infopcolor="#E7E7E7"
-            list={data1}
-            gradienticon={BlankFillIconp}
-            listicon="assets/listiconpurple.svg"
-            icon={faClipboardList}
-            backgroundgradient={GradientPurpleBackground}
-            svgPath="/public/assets/content1.svg"
-            btngradient={GradientOutPurpleBTN}
-            btncolor="#7508CC"
-          />
+        <div>
+          <SecTech></SecTech>
         </div>
+        <SectionStatistic>
+          <SecStatistic/>
+        </SectionStatistic>
+        <SectionCta>
+          <SecCTA/>
+        </SectionCta>
       </>
     </BackgroundGradient>
   );

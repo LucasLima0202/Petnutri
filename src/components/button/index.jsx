@@ -28,9 +28,9 @@ const StyledButton = styled.button`
   
 `;
 
-const Button = ({ title, gradient, onPress, color,children   }) => {
+const Button = ({ title, gradient, onPress, color, children, left   }) => {
   return (
-    <StyledButton gradient={gradient} onClick={onPress} color={color}>
+    <StyledButton gradient={gradient} onClick={onPress} color={color} left={left}>
       {title}{children}
     </StyledButton>
   );

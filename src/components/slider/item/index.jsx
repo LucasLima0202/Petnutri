@@ -98,24 +98,20 @@ const ContainerWidth = styled.div`
 `
 
 const AnchorButton = styled.a`
-  /* color:${props => props.anchorcolor};
-  text-decoration:none;
-  transition: all ease-in-out 0.1s;
-  &:hover{
-  transform: scale(1.01);
-  font-weight:600;  
-  } */
-    background-color: aliceblue;
+
     color:${props => props.anchorcolor};
     font-size: 1rem;
     text-decoration: none;
     margin-top: 1%;
     display: inline-block;
+    height:40px;
     font-weight: bold;
     padding: .5em;
     margin-left: -.5em;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    
+    
 
     &:before, &:after {
         position: absolute;

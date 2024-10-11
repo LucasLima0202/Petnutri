@@ -36,7 +36,7 @@ const SectionBackground = styled.div`
   @media (max-width: 468px) {
     flex-direction:column-reverse;
     align-items:center;
-    height:130vh;
+    height:140vh;
   }
 `;
 
@@ -51,9 +51,13 @@ const ContainerSvg = styled.div`
     }
 
     @media (max-width: 468px) {
+      padding-right: 0%;  
+      justify-content:center;
+      align-items:flex-end;
       img{
-    width:45vw;
+    width:65vw;
     padding-top:8%;
+    text-align:center;
     }
     }
 `;

@@ -53,10 +53,12 @@ const ContainerSvg = styled.div`
     }
     @media (max-width: 468px) {
       padding-right: 0%;  
+      justify-content:center;
+      align-items:center;
       img{
-    width:45vw;
+    width:75vw;
     padding-top:8%;
-   
+    text-align:center;
     }
     }
 
@@ -184,7 +186,6 @@ const SecInfoL = ({
   }) => {
   return (  
     <>
-    
       <SectionBackground backgroundgradient={backgroundgradient} >
         <ContainerSvg>
             <img src={svgPath} alt={title} />
