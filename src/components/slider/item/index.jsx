@@ -48,6 +48,16 @@ const BoxIcon = styled.div`
     }
 
   }
+
+  @media (max-width: 328px) {
+    height: 50.98px;
+    width: 50.98px;
+    left: 21%;
+    svg{
+      font-size:22px;
+    }
+
+  }
 `;
 
 const ContainerInfo = styled.div`
@@ -71,6 +81,10 @@ font-weight:600;
   width:80%;
 }
 
+@media (max-width: 328px) {
+  font-size:6vw;
+  }
+
 `
 const Label = styled.p`
 font-size:1rem;
@@ -79,6 +93,12 @@ font-size:1rem;
   width:60%;
   text-align:left;
 }
+
+@media (max-width: 328px) {
+  font-size:4.5vw;
+  width:40%;
+  }
+
 `
 
 const ContainerWidth = styled.div`
@@ -111,7 +131,8 @@ const AnchorButton = styled.a`
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     
-    
+
+
 
     &:before, &:after {
         position: absolute;
@@ -181,6 +202,11 @@ const AnchorButton = styled.a`
 
 }
 }
+
+@media (max-width: 328px) {
+  font-size:4vw;
+  }
+
 `
 
 const Item = ({ id, icon, gradient, gradienticon, title, label, anchor, anchorcolor }) => {

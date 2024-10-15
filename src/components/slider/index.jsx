@@ -202,6 +202,10 @@ const Slider = () => {
         loop={false} 
 
         breakpoints={{
+          100: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
           320: {
             slidesPerView: 1,
             spaceBetween: 20,

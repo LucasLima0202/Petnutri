@@ -9,9 +9,13 @@ margin-top:5%;
 align-items:center;
 justify-content:center;
 flex-direction:row;
+@media (max-width: 700px) {
+    flex-direction:column;
+}
 @media (max-width: 468px) {
     flex-direction:column;
 }
+
 `
 
 const ContainerCenter = styled.div`
@@ -80,6 +84,11 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;  flex-direction: column;
     margin-bottom:5%;
     margin-top:5%;
 }
+@media (max-width: 368px) {
+  font-size:0.9rem;
+  text-align:center;
+  width:55vw;
+}
 `
 
 const Title = styled.h1`
@@ -93,6 +102,9 @@ const Title = styled.h1`
     margin-top:8%;
     width:95%;
   }
+  @media (max-width: 309px) {
+text-align:center;
+}
 `;
 const Label = styled.p`
   font-size: 1rem;

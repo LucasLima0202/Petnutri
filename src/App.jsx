@@ -18,6 +18,7 @@ import Wave from './components/SecStatistic/Wave';
 import SecStatistic from './components/SecStatistic';
 import SecCTA from './components/SecCTA';
 import SecTech from './components/SecTech';
+import Footer from './components/footer';
 
 
 // Estilo de fundo
@@ -117,10 +118,11 @@ align-items:center;
 
 const SectionStatistic = styled.div`
 `
-
 const SectionCta = styled.div`
 `
-
+const SecFooter = styled.div`
+background-color: #F6EBFF;
+`
 
 const data1 = [
   "Syncing content across platforms for consistency",
@@ -248,6 +250,9 @@ function App() {
         <SectionCta>
           <SecCTA/>
         </SectionCta>
+        <SecFooter>
+        <Footer/>
+        </SecFooter>
       </>
     </BackgroundGradient>
   );

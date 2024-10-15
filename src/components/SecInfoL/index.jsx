@@ -152,6 +152,9 @@ const Title = styled.h1`
     font-size: 1.8rem;
 
   }
+  @media (max-width: 309px) {
+text-align:center;
+}
 `;
 
 const Infop = styled.p`
@@ -164,6 +167,11 @@ const Infop = styled.p`
   font-size: 0.9rem;
   width:85%;
   text-align:center;
+}
+@media (max-width: 368px) {
+  font-size:0.9rem;
+  text-align:justify;
+  width:80%;
 }
 `;
 
