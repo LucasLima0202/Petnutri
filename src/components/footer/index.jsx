@@ -71,7 +71,7 @@ const AnotherInfo = styled.div`
   flex-direction: row;
   align-items: center;
 
-  a{
+  p{
     color: #F53838;
     &:hover {
       color: #E55050;
@@ -133,18 +133,13 @@ const Footer = () => {
             <span>Criado por Fernanda © 2024</span>
           </Copyright>
           
-          <SocialProfile>
-            <ul>
-              <li><a href="#"><FontAwesomeIcon icon={faFacebookF} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faInstagram} /></a></li>
-            </ul>
-          </SocialProfile>
+         
   
           <AnotherInfo>
-            <a href="#">Pet Nutrição</a>
+            <p>Pet Nutrição</p>
             <ul>
               <li><a href="#"><FontAwesomeIcon icon={faSquarePhone} /></a></li>
-              <p>(31) 9 9090-0710</p>
+              <p>(31) 9 9554-3483</p>
             </ul>
           </AnotherInfo>
         </Row>

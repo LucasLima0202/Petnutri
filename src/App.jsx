@@ -211,7 +211,7 @@ function App() {
           <Sep></Sep>
           <NotepadWarning 
           backgroundImage={BackgroundWarn}
-          text="Lembre-se de consultar o veterinário antes de iniciar qualquer dieta caseira para garantir que as necessidades nutricionais do seu Shih Tzu sejam completamente atendidas."
+          text="Aqui estão algumas sugestoes de raçoes naturais"
           />
         </div>
         <Footer></Footer>
