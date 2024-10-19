@@ -1,24 +1,19 @@
 import styled, { css } from 'styled-components';
 import GlobalStyle from './components/GlobalStyle';
-import Navbar from './components/navbar';
-// import Button from './components/button';
+
 import Banner from './components/banner';
-import Slider from './components/slider';
+
 import OptimalInfo from './components/optimalinfo';
-import SecInfoR from './components/SecInfoR';
-import SecInfoL from './components/SecInfoL';
+
 import React, { useRef } from 'react';
-//icon
-import { faChartColumn } from '@fortawesome/free-solid-svg-icons';
-import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
-import { faChartLine } from '@fortawesome/free-solid-svg-icons';
-import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
-import { faCalendar } from '@fortawesome/free-regular-svg-icons';
-import Wave from './components/SecStatistic/Wave';
-import SecStatistic from './components/SecStatistic';
-import SecCTA from './components/SecCTA';
-import SecTech from './components/SecTech';
+import Sep from './components/sep';
+import MealPlan from './components/information';
+import GeneralNotes from './components/generalinfo';
+import NotepadWarning from './components/notepad';
 import Footer from './components/footer';
+import PlanoNutriComponent from './components/planonutriheadind';
+
+
 
 
 // Estilo de fundo
@@ -28,231 +23,198 @@ const BackgroundGradient = styled.div`
   min-height: 100vh;
 `;
 
-// Definindo os gradientes
-const GradientFillPurpleBTN = css`
-  background-image: linear-gradient(to right, #7309CA, #5020AB, #7309CA, #641FE7);
-  box-shadow: 0 4px 15px 0 #641FE7;
-`;
-
-const GradientFillBlueBTN = css`
-  background-image: linear-gradient(to right, #28265A, #4F4BB0, #28265A, #4F4BB0);
-  box-shadow: 0 4px 15px 0 #28265A;
-`;
-
-const GradientOutBlueBTN = css`
-  background-image: linear-gradient(to right, #FFFFFF, #6A68AF, #FFFFFF);
-  box-shadow: 0 4px 15px 0 #FFFFFF;
-`;
-
-const GradientOutPurpleBTN = css`
-  background-image: linear-gradient(to right, #FFFFFF, #CD9BFF, #FFFFFF);
-  box-shadow: 0 4px 15px 0 #FFFFFF;
-`;
-
-const GradientHeadingPurple = css`
-  background-image: linear-gradient(78deg, #7508CC, #4D22A9);
-`;
-
-const GradientFillIconp = css`
-  background-color: #7508CC;
-  color: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`;
-
-const BlankFillIconp = css`
-  background-color: #FFFFFF;
-  color: #7508CC;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`;
-
-const GradientHeadingBlue = css`
-  background-image: linear-gradient(78deg, #4F4BB0, #21204A);
-`;
-
-const GradientFillIconb = css`
-  background-color: #4F4BB0;
-  color: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`;
-
-const BlankFillIconb = css`
-  background-color: #FFFFFF;
-  color: #4F4BB0;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`;
-
-const GradientHeadingDark = css`
-  background-image: linear-gradient(78deg, #001230, #2E1B7A);
-`;
-
-//background gradient 
-const GradientPurpleBackground = css`
-  background-image: linear-gradient(78deg, #7309CA, #5020AB);
-`;
-
-const GradientBlueBackground = css`
-  background-image: linear-gradient(78deg, #4F4BB0, #28265A);
-`;
-
-const WhiteBackground = css`
-  background-image: #FFFFFF;
-`;
-
-
-
-const BannerImg = '/public/assets/BG.svg';
-
-
 const Services = styled.div`
-display:flex;
-height: 60vh;
-justify-content:center;
-align-items:center;
-`
+  display: flex;
+  flex-direction: column; /* Alinha os itens em coluna */
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+`;
+
 const SubHedServices = styled.div`
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SubTitleInfo = styled.p`
+font-size: 1.1rem;
+width:100%;
+font-weight: 000;
+color: #FF8080;
+margin-bottom:5%;
+text-align:left;
+margin-left:17%;
+@media (max-width: 985px) {
+    font-size:1.2rem;
+    
+  }
+  @media (max-width: 768px) {
+    text-align:center;
+    font-size:3vw;
+    margin-top:4%;
+    width:100%;
+}
+
+@media (max-width: 468px) {
+  font-size:0.9rem;
+  text-align:justify;
+  width:100%;
+}
+
 `
 
-const SectionStatistic = styled.div`
-`
-const SectionCta = styled.div`
-`
-const SecFooter = styled.div`
-background-color: #F6EBFF;
-`
 
-const data1 = [
-  "Syncing content across platforms for consistency",
-  "Streamlining content creation through effective teamwork",
-  "Ensuring cohesive messaging across all media"
+const BannerImg = '/public/assets/Hero.svg';
+const BackgroundWarn = '/public/assets/backgroundwarn.svg';
+
+
+
+
+const day = "Dia 1";
+const meals = [
+  {
+    title: "Café da Manhã",
+    calories: 130,
+    protein: "50g de frango desfiado cozido (sem pele, sem tempero)",
+    carb: "25g de arroz integral cozido",
+    vegetables: "10g de cenoura cozida em pequenos pedaços",
+    fat: "1 colher de chá de azeite de oliva extra virgem",
+  },
+  {
+    title: "Almoço",
+    calories: 120,
+    protein: "40g de carne bovina magra (patinho) cozida e sem gordura",
+    carb: "15g de batata-doce cozida e amassada",
+    vegetables: "10g de abobrinha cozida em cubinhos",
+  },
+  {
+    title: "Jantar",
+    calories: 120,
+    protein: "40g de peixe branco (tilápia ou merluza) cozido",
+    carb: "20g de quinoa cozida",
+    vegetables: "10g de espinafre cozido picado",
+  },
+  {
+    title: "Snacks",
+    calories: 50,
+    protein: "1 colher de chá de iogurte natural sem açúcar",
+    carb: "Pequenos pedaços de maçã (sem sementes) ou morangos (cerca de 2 ou 3 pedaços)",
+  },
 ];
-const data2 = [
-  "Strategy reviews, content guidance, and communication planning.",
-  "Streamlining content creation through effective teamwork",
-  "Ensuring cohesive messaging across all media"
+
+const day2 = "Dia 2";
+const meals2 = [
+  {
+    title: "Café da Manhã",
+    calories: 130,
+    protein: "45g de carne moída de frango ou peru cozida",
+    carb: "20g de aveia cozida",
+    vegetables: "10g de abóbora cozida e amassada",
+    fat: "1 colher de chá de óleo de coco",
+  },
+  {
+    title: "Almoço",
+    calories: 120,
+    protein: "40g de carne de frango (coxão mole ou peito) cozida",
+    carb: "15g de batata inglesa cozida e amassada",
+    vegetables: "10g de brócolis cozido",
+  },
+  {
+    title: "Jantar",
+    calories: 120,
+    protein: "40g de ovo cozido (pode ser metade da clara e metade da gema)",
+    carb: "20g de arroz integral",
+    vegetables: "10g de vagem cozida picada",
+  },
+  {
+    title: "Snacks",
+    calories: 50,
+    protein: "1 colher de chá de ricota ou queijo cottage",
+    carb: "Alguns pedaços de banana (sem casca) ou melancia (sem sementes)",
+  },
 ];
-const data3 = [
-  "Group Management",
-  "Broadcasting Operations",
-  "Ensuring cohesive messaging across all media"
+
+
+// Observações Gerais
+const generalNotes = [
+  {
+    title: "Quantidade de proteína:",
+    content: "Cada refeição deve conter uma boa fonte de proteína animal (carne, frango, peixe ou ovo), pois é fundamental para a saúde muscular do cão."
+  },
+  {
+    title: "Carboidratos:",
+    content: "O arroz integral, quinoa, batata-doce e aveia são boas fontes de energia, ajudando a manter o nível de atividade sem provocar picos de açúcar no sangue."
+  },
+  {
+    title: "Vegetais:",
+    content: "Cenoura, abóbora, abobrinha, espinafre, brócolis e vagem são vegetais seguros para cães, ricos em vitaminas e fibras."
+  },
+  {
+    title: "Gorduras:",
+    content: "Use pequenas quantidades de gorduras saudáveis, como azeite de oliva ou óleo de coco, para promover uma pele saudável e pelos brilhantes."
+  },
+  {
+    title: "Hidratação:",
+    content: "Tenha sempre água fresca e limpa disponível."
+  },
 ];
-const data4 = [
-  "Align social media with your brand's goals",
-  "Engage the right people effectively",
-  "Create posts that drive real results"
+
+// Suplementação
+const supplementation = [
+  {
+    title: "Ômega 3:",
+    content: "Suplementos de ômega 3 (como óleo de peixe) podem ser benéficos para a pele e articulações, se recomendados pelo veterinário."
+  },
+  {
+    title: "Vitaminas e Minerais:",
+    content: "Um suplemento vitamínico/mineral recomendado pelo veterinário pode ajudar a garantir que o cão receba todos os nutrientes necessários."
+  },
 ];
+
+
 
 function App() {
-  const contentRef = useRef(null);
-  const mentorshipRef = useRef(null);
-
-  const handleScroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
   return (
     <BackgroundGradient>
       <GlobalStyle />
       <>
-        <Navbar/>
         <Banner
-        backgroundImage={BannerImg}
+          backgroundImage={BannerImg}
+          petname="Nala"
         />
         <SubHedServices>
-          <OptimalInfo 
-          title="Our Services"
-          subinfo="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis et justo a pellentesque. Aliquam sagittis mollis libero eu molestie. Cras pellentesque condimentum placerat. "
+          <Sep></Sep>
+          <OptimalInfo
+            title="DADOS DO PET"
+            subinfo="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis et justo a pellentesque. Aliquam sagittis mollis libero eu molestie. Cras pellentesque condimentum placerat. "
           />
+
         </SubHedServices>
         <Services>
-          <Slider/>
+          <PlanoNutriComponent/>
+          <MealPlan day={day} meals={meals} />
         </Services>
-        <div ref={contentRef}>
-          <SecInfoR
-            title="Content Production"
-            titlecolor="#FFFFFF"
-            id="content"
-            infop="Execution of communication strategies with a detailed content calendar for social media, website, and offline media, along with team coordination throughout the content creation process."
-            infopcolor="#E7E7E7"
-            list={data1}
-            gradienticon={BlankFillIconp}
-            listicon="assets/listiconpurple.svg"
-            icon={faClipboardList}
-            backgroundgradient={GradientPurpleBackground}
-            svgPath="/public/assets/content1.svg"
-            btngradient={GradientOutPurpleBTN}
-            btncolor="#7508CC"
-            btnlabel="Take a look"
-          />
-        </div>
-        <div ref={mentorshipRef}>
-          <SecInfoL
-            title="Mentorship Programs"
-            id="mentorship"
-            titlecolor="#2C0E56"
-            infop="Enhance your skills with our tailored mentorship sessions"
-            infopcolor="#555555"
-            list={data2}
-            gradienticon={GradientFillIconp}
-            icon={faCalendar}
-            listicon="assets/listiconpurplewhite.svg"
-            backgroundgradient={WhiteBackground}
-            svgPath="/public/assets/content2.svg"
-            btngradient={GradientFillPurpleBTN}
-            btncolor="#ffffff"
-            btnlabel="See details"
-          />
-        </div>
-        <div ref={contentRef}>
-          <SecInfoR
-            title="Whatsapp Management"
-            titlecolor="#FFFFFF"
-            id="management"
-            infop="Optimize your outreach with strategic communication solutions."
-            infopcolor="#E7E7E7"
-            list={data3}
-            gradienticon={BlankFillIconb}
-            listicon="assets/listiconblue.svg"
-            icon={faChartColumn}
-            backgroundgradient={GradientBlueBackground}
-            svgPath="/public/assets/content3.svg"
-            btngradient={GradientOutBlueBTN}
-            btncolor="#28265A"
-            btnlabel="Take a look"
-          />
-        </div>
-        <div ref={mentorshipRef}>
-          <SecInfoL
-            title="Strategic Planning"
-            id="strategic"
-            titlecolor="#28265B"
-            infop="Our social media planning service boosts your online presence with custom strategies, targeted audience engagement, and effective content management to achieve real results."
-            infopcolor="#555555"
-            list={data4}
-            gradienticon={GradientFillIconb}
-            icon={faUserGroup}
-            listicon="assets/listiconbluewhite.svg"
-            backgroundgradient={WhiteBackground}
-            svgPath="/public/assets/content4.svg"
-            btngradient={GradientFillBlueBTN}
-            btncolor="#ffffff"
-            btnlabel="See details"
-          />
+        <Sep></Sep>
+        <Services>
+          <MealPlan day={day2} meals={meals2} />
+        </Services>
+        <div>
+          <Sep></Sep>
+          <GeneralNotes title="Observações Gerais" notes={generalNotes} />
+          <Sep></Sep>
+          <GeneralNotes title="Suplementação" notes={supplementation} />
         </div>
         <div>
-          <SecTech></SecTech>
+          <Sep></Sep>
+          <NotepadWarning 
+          backgroundImage={BackgroundWarn}
+          text="Lembre-se de consultar o veterinário antes de iniciar qualquer dieta caseira para garantir que as necessidades nutricionais do seu Shih Tzu sejam completamente atendidas."
+          />
         </div>
-        <SectionStatistic>
-          <SecStatistic/>
-        </SectionStatistic>
-        <SectionCta>
-          <SecCTA/>
-        </SectionCta>
-        <SecFooter>
-        <Footer/>
-        </SecFooter>
+        <Footer></Footer>
       </>
     </BackgroundGradient>
   );

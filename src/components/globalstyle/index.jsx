@@ -8,8 +8,7 @@ html {
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
   scroll-behavior: smooth;
-  font-family: "DM Sans", sans-serif;
-
+  font-family: "Rubik", sans-serif;
 }
 body {
   margin: 0;

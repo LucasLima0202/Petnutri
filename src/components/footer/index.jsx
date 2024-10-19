@@ -1,225 +1,155 @@
 import React from "react";
 import styled from "styled-components";
-import Diag from "./diagonal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faGooglePlusG, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faSquarePhone } from '@fortawesome/free-solid-svg-icons';
+import Sep from "../sep";
 
 // Estilos do Footer
 const FooterWrapper = styled.div`
-  background: linear-gradient(105deg, #5020AB, #7309CA);
   padding-top: 20px;
   padding-bottom: 40px;
-  margin-top:-1px;
-  color: white;
-  overflow:hidden;
+  margin-top: -1px;
+  color: #222222;
+  overflow: hidden;
   @media (max-width: 468px) {
-    margin-top:-1px;
-    background:#7309CA;
+    margin-top: -1px;
   }
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  margin-top:2%;
   padding: 0 20px;
 `;
 
 const Row = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
-  @media (max-width: 468px) {
-    justify-content: space-between;
-
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
-`;
-
-const Column = styled.div`
-  flex: 1;
-  min-width: 250px;
-  margin-bottom: 30px;
-
-  h4 {
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    position: relative;
-
-    &::after {
-      content: "";
-      display: block;
-      height: 2px;
-      width: 40px;
-      background: #fff;
-      margin-top: 20px;
-    }
-    @media (max-width: 368px) {
-        width:70%;
-      }
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      line-height: 36px;
-
-      a {
-        color: white;
-        font-size: 15px;
-        text-transform: capitalize;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #9D6EE4;
-        }
-       
-      }
-    }
-  }
-
-  @media (max-width: 368px) {
-       ul{
-        width:70%;
-       }
-
-       li{
-        width:70%;
-       } 
-      }
 `;
 
 const SocialProfile = styled.div`
-  margin-top: 40px;
-  display:flex;     
   ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
+    gap: 10px;
 
-    li {
-      margin-right: 10px;
+    li a {
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10%;
+      color: #F53838;
+      transition: all 0.3s ease;
+      font-size: 1.3rem;
 
-      a {
-        display: block;
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-        background-color: #7C46C4;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 30px;
-        color: white;
-        transition: all 0.3s ease;
-        font-size:1.3rem;
-
-        &:hover {
-          background: #9D6EE4;
-          border-color: #9D6EE4;
-          color:#ffffff;
-        }
-
-        i {
-          font-size: 18px;
-        }
+      &:hover {
+        background: #F53838;
+        border-color: #F53838;
+        color: #ffffff;
       }
     }
   }
+`;
 
-  @media (max-width: 368px) {
-      ul{ width:20%;
-        display:flex;
-        gap:1rem;
-        flex-direction:row;
-        
-      }
-      a{
-        width:15vw !important;
-        height:15vw !important;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        svg{
-          font-size:6vw ;
-        }
-      }
-      }
+const AnotherInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  a{
+    color: #F53838;
+    &:hover {
+      color: #E55050;
+    }
+  }
+
+  li a {
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10%;
+      color: #F53838;
+      transition: all 0.3s ease;
+      font-size: 1.3rem;
+
+ 
+    }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+      margin: 0;
+
+    }
+  }
 `;
 
 const Copyright = styled.div`
-  text-align: center;
-  gap:0.5%;
-  padding-top: 40px;
-  width:100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
-  margin-top: 70px;
   font-size: 15px;
-  display:flex;
-  justify-content:center;
-  a {
-    color: #01c7e9;
-    transition: color 0.2s ease;
 
-    &:hover {
-      color: #9D6EE4;
-    }
+  a {
+    color: #606464;
+    text-decoration: none;
+
+ 
   }
-  @media (max-width: 368px) {
-        margin:0;
-      }
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 // Componente Footer
 const Footer = () => {
-  return (<>
-    <Diag></Diag>
+  return (
     <FooterWrapper>
+     <Sep/>
       <Container>
         <Row>
-          <Column>
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#">Lorem Ipsum</a></li>
-              <li><a href="#">Simply dummy text</a></li>
-              <li><a href="#">The printing and typesetting</a></li>
-              <li><a href="#">Standard dummy text</a></li>
-              <li><a href="#">Type specimen book</a></li>
-            </ul>
-          </Column>
-          <Column>
-            <h4>Page Link</h4>
-            <ul>
-              <li><a href="#">Lorem Ipsum</a></li>
-              <li><a href="#">Simply dummy text</a></li>
-              <li><a href="#">The printing and typesetting</a></li>
-              <li><a href="#">Standard dummy text</a></li>
-              <li><a href="#">Type specimen book</a></li>
-            </ul>
-          </Column>
-          <Column>
-            <h4>Subscribe today</h4>
-            {/* Adicione um formulário de inscrição aqui */}
-            <SocialProfile>
-              <ul>
-                <li><a href="#"><FontAwesomeIcon icon={faFacebookF} /></a></li>
-                <li><a href="#"><FontAwesomeIcon icon={faTwitter} /></a></li>
-                <li><a href="#"><FontAwesomeIcon icon={faGooglePlusG}/></a></li>
-                <li><a href="#"><FontAwesomeIcon icon={faInstagram} /></a></li>
-              </ul>
-            </SocialProfile>
-          </Column>
-        </Row>
-        <Row>
           <Copyright>
-            Copyright © 2024 <a href="#">Voxis Communication</a>
+            <span>Criado por Fernanda © 2024</span>
           </Copyright>
+          
+          <SocialProfile>
+            <ul>
+              <li><a href="#"><FontAwesomeIcon icon={faFacebookF} /></a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faInstagram} /></a></li>
+            </ul>
+          </SocialProfile>
+  
+          <AnotherInfo>
+            <a href="#">Pet Nutrição</a>
+            <ul>
+              <li><a href="#"><FontAwesomeIcon icon={faSquarePhone} /></a></li>
+              <p>(31) 9 9090-0710</p>
+            </ul>
+          </AnotherInfo>
         </Row>
       </Container>
     </FooterWrapper>
-    </>
   );
 };
 
