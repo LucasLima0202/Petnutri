@@ -64,7 +64,7 @@ margin-left:17%;
 `
 
 
-const BannerImg = '/public/assets/Hero.svg';
+const BannerImg = './assets/Hero.svg';
 const BackgroundWarn = './assets/backgroundwarn.svg';
 
 
@@ -298,7 +298,7 @@ function App() {
           <Sep></Sep>
           <NotepadWarning 
           backgroundImage={BackgroundWarn}
-          text="Aqui estão algumas sugestoes de raçoes naturais"
+          text="Aqui estão algumas sugestões de rações naturais"
           />
         </div>
         <Footer></Footer>
