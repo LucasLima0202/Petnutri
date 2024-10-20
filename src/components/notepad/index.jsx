@@ -147,20 +147,20 @@ const NotepadWarning = ({backgroundImage,text}) => {
                 </Text>
                 <UlCustom>
                 <li>
-                    <img src="dist/assets/img1.png" />
+                    <img src="./assets/img1.png" />
                     Ração Fórmula Natural Fresh Meat
                 </li>
                 <li>
-                    <img src="dist/assets/img2.png" />
+                    <img src="./assets/img2.png" />
                     Ração Fórmula Natural Fresh Meat Sensitive
                 </li>
                 <li>
-                    <img src="dist/assets/img3.png"/>
+                    <img src="./assets/img3.png"/>
                     N&D Prime Canine
 Cordeiro & Blueberry Adult Mini
                 </li>
                 <li>
-                    <img src="dist/assets/img4.png" />
+                    <img src="./assets/img4.png" />
                     Ração Farmina N&D Prime sabor Cordeiro e Blueberry Cães Adultos de Raças Grande
                 </li> 
                 </UlCustom>
