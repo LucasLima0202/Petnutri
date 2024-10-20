@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import GlobalStyle from './components/GlobalStyle';
 
 import Banner from './components/banner';
 
 import OptimalInfo from './components/optimalinfo';
 
-import React, { useRef } from 'react';
+import React from 'react';
 import Sep from './components/sep';
 import MealPlan from './components/information';
 import GeneralNotes from './components/generalinfo';
