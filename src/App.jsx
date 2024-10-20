@@ -1,10 +1,6 @@
 import styled from 'styled-components';
-import GlobalStyle from './components/GlobalStyle';
-
 import Banner from './components/banner';
-
 import OptimalInfo from './components/optimalinfo';
-
 import React from 'react';
 import Sep from './components/sep';
 import MealPlan from './components/information';
@@ -12,6 +8,7 @@ import GeneralNotes from './components/generalinfo';
 import NotepadWarning from './components/notepad';
 import Footer from './components/footer';
 import PlanoNutriComponent from './components/planonutriheadind';
+import { createGlobalStyle } from "styled-components";
 
 
 
@@ -137,6 +134,96 @@ const meals2 = [
   },
 ];
 
+const EstiloGlobal = createGlobalStyle`
+html {
+  line-height: 1.15; 
+  -webkit-text-size-adjust: 100%; 
+  scroll-behavior: smooth;
+  font-family: "Rubik", sans-serif;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+main {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+
+}
+hr {
+  box-sizing: content-box; 
+  height: 0; 
+  overflow: visible; 
+}
+a {
+  background-color: transparent;
+}
+abbr[title] {
+  border-bottom: none; 
+  text-decoration: underline; 
+  text-decoration: underline dotted; 
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; 
+  font-size: 1em; 
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; 
+  font-size: 100%; 
+  line-height: 1.15; 
+  margin: 0; 
+}
+button,
+input { 
+  overflow: visible;
+}
+
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+    
+`
 
 // Observações Gerais
 const generalNotes = [
@@ -179,7 +266,7 @@ const supplementation = [
 function App() {
   return (
     <BackgroundGradient>
-      <GlobalStyle />
+    <EstiloGlobal/>
       <>
         <Banner
           backgroundImage={BannerImg}

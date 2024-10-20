@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 
 
 
-const GlobalStyle = createGlobalStyle`
+const EstiloGlobal = createGlobalStyle`
 html {
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
@@ -93,4 +93,4 @@ template {
 }
     
 `
-export default GlobalStyle
+export default EstiloGlobal;
