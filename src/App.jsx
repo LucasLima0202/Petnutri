@@ -65,7 +65,7 @@ margin-left:17%;
 
 
 const BannerImg = '/public/assets/Hero.svg';
-const BackgroundWarn = '/public/assets/backgroundwarn.svg';
+const BackgroundWarn = '/dist/assets/backgroundwarn.svg';
 
 
 
