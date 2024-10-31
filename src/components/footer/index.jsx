@@ -130,7 +130,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Copyright>
-            <span>Criado por Fernanda © 2024</span>
+            <span>Criado por Fernanda Lima - 2024</span>
           </Copyright>
           
          
